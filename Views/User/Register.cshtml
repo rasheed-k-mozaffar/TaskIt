@@ -1,0 +1,51 @@
+﻿@model RegisterUserModel
+
+<link rel="stylesheet" href="~/css/FormStyles.css" />
+
+
+<div class="container  d-flex align-items-center justify-content-center mt-3">
+    <div class="row  form-container mt-5">
+        <div class="col-1 left-side-form p-4" >
+
+            
+
+        </div>
+
+        <div class="col-11 right-side-form p-4">
+            <form method="post" asp-controller="User" asp-action="Register">
+                <h3><i class="bi bi-person-plus"></i> Register New User</h3>
+                    <br>
+                    <div class="form-group mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input class="form-control" type="email" asp-for="Email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="form-label">Password</label>
+                        <input class="form-control" type="password" asp-for="Password">
+                        <p class="some-text mt-1">
+                            <i class="bi bi-lightbulb"></i> Password must contain at least 8 characters.
+
+                        </p>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="form-label">Confirm Password</label>
+                        <input class="form-control" type="password" asp-for="PasswordConfirmation">
+                        <span asp-validation-for="PasswordConfirmation" class="text-danger"></span>
+                    </div>
+
+                    <p>Already registered ? Login <a asp-controller="User" asp-action="SignIn">here</a> directly.</p>
+
+                    <div class=" form-group ">
+                        <button type="submit" class="btn btn-primary">Register</button>
+
+                    </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> _SignInManager;
+@inject UserManager<IdentityUser> _UserManager;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@if (_SignInManager.IsSignedIn(User))
+{
+    <ul class="navbar-nav">
+        <li>
+            <a class="link" asp-controller="Home" asp-action="Index">Home</a>
+        </li>
+
+        <li>
+            <a class="link" asp-controller="Todos" asp-action="Index">Todos</a>
+        </li>
+
+        <li>
+            <a class="link" asp-controller="Home" asp-action="Contact">Contact Us</a>
+        </li>
+
+        <li>
+            <a class="link" asp-controller="User" asp-action="Logout" style="color: red;">Logout</a>
+        </li>
+
+        <li>
+            <p style="font-size: 1.05rem">Hi @User.Identity?.Name.Split("@")[0] !</p>
+        </li>
+
+    </ul>
+}
+else
+{
+    <ul class="navbar-nav">
+        <li>
+            <a class="link" asp-controller="Home" asp-action="Index">Home</a>
+        </li>
+
+        <li>
+            <a class="link" asp-controller="User" asp-action="SignIn">Sign in</a>
+        </li>
+
+        <li>
+            <a class="link" asp-controller="User" asp-action="Register">Register</a>
+        </li>
+    </ul>
+}

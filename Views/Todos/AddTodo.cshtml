@@ -1,0 +1,43 @@
+﻿@model Todo
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<link rel="stylesheet" href="~/css/FormStyles.css" />
+
+<div class="container  d-flex align-items-center justify-content-center mt-3">
+    <div class="row  form-container mt-5" style="height: 18rem">
+        <div class="col-1 left-side-form p-4">
+
+
+
+        </div>
+
+        <div class="col-11 right-side-form p-4">
+            <form method="post" asp-controller="Todos" asp-action="AddTodo">
+                <h3><i class="bi bi-plus-circle-fill"></i> Add New Todo</h3>
+                <br>
+                <div class="form-group mb-3">
+                    <label class="form-label">Todo</label>
+                    <input class="form-control" asp-for="Title">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <input class="form-control" asp-for="Owner" hidden>
+
+
+
+                <div class="form-group mb-3">
+                    <button class="btn btn-primary mb-2" type="submit" style="width:8rem;"><i class="bi bi-plus-circle-fill"></i> Add Todo</button> <br />
+                    <a class="btn btn-dark" asp-controller="Todos" asp-action="Index" style="width:8rem;"><i class="bi bi-arrow-left-circle-fill"></i> Go Back</a>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,56 @@
+﻿.form-container {
+    height: 25rem;
+    width: 80%;
+    
+    border-radius: 12px;
+    box-shadow: 10px 10px 20px gray;
+    
+}
+
+.left-side-form {
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+    color: var(--textColor);
+    background-color: var(--secondaryColor);
+}
+
+.right-side-form p {
+    font-size: 12px;
+}
+
+.right-side-form {
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+    background-color: white;
+}
+
+.form-label {
+    font-size: 14px;
+}
+
+.some-text {
+    font-size: 12px;
+    color: rgb(110, 110, 110);
+}
+
+.form-control {
+    width: 80%;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+
+    .left-side-form {
+        display: none;
+    }
+
+    .right-side-form {
+        border-bottom-left-radius: 12px;
+        border-top-left-radius: 12px;
+    }
+
+    .form-control {
+        width: 110%;
+    }
+}
